@@ -1,0 +1,13 @@
+variables:
+  namespace: "digital-dashboard"
+
+include:
+  - project: 'bismarck-shared/ci-cd/standard-ci'
+    ref: kustomize
+    file: '1-base-ci-template.yml'
+  - project: 'bismarck-shared/ci-cd/standard-ci'
+    ref: kustomize
+    file: '2-docker-ci-template.yml'
+  - project: 'bismarck-shared/ci-cd/standard-ci'
+    ref: kustomize
+    file: '3-deploy-test-ci-template.yml'
