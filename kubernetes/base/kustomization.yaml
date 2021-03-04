@@ -1,0 +1,12 @@
+resources:
+- manifest.yaml
+vars:
+- name: ING_NAME
+  objref:
+    apiVersion: extensions/v1beta1
+    kind: Ingress
+    name: api-typescript-demo
+  fieldref:
+    fieldpath: metadata.name
+configMapGenerator:
+  - name: api-typescript-demo-config
