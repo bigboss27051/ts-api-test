@@ -5,6 +5,6 @@ images:
   newTag: ${imageTag}
 nameSuffix: -staging
 commonLabels:
-  app: api-typescript-staging
+  app: api-typescript-demo-staging
 patchesStrategicMerge:
 - patch.yaml

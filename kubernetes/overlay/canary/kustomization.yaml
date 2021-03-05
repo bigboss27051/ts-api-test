@@ -5,6 +5,6 @@ images:
   newTag: ${imageTag}
 nameSuffix: -canary
 commonLabels:
-  app: api-typescript-prod
+  app: api-typescript-demo-prod
 patchesStrategicMerge:
 - patch.yaml

@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-typescript-deploy
+  name: api-typescript-demo-deploy
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: api-typescript
+        app: api-typescript-demo
         mode: canary
     spec:
       containers:
