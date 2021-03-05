@@ -1,6 +1,7 @@
 FROM node:10-alpine
-WORKDIR /web
+WORKDIR /app
 COPY . .
 RUN adduser -SD appadm
 USER appadm
+RUN npm install
 CMD ["npm","start"]
