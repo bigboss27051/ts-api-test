@@ -1,7 +1,6 @@
 FROM node:10-alpine
 WORKDIR /app
-COPY package.json .
-RUN npm install
-COPY . /app
-EXPOSE 3003
-CMD [ "npm", "start"]
+COPY . .
+RUN adduser -SD appadm
+USER appadm
+CMD ["npm","run","start-dev"]
