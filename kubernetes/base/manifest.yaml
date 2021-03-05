@@ -2,9 +2,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-tyscript-demo
+  name: api-typescript-demo
   labels:
-    app: api-tyscript-demo
+    app: api-typescript-demo
 spec:
   replicas: 1
   strategy:
@@ -14,11 +14,11 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: api-tyscript-demo
+      app: api-typescript-demo
   template:
     metadata:
       labels:
-        app: api-tyscript-demo
+        app: api-typescript-demo
     spec:
       containers:
       - name: primary
@@ -38,7 +38,7 @@ spec:
             port: 3004
         envFrom:
         - configMapRef:
-            name: api-tyscript-demo-config
+            name: api-typescript-demo-config
       imagePullSecrets:
       - name: regcred-harbor
 ---
@@ -46,11 +46,11 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: api-tyscript-demo
+  name: api-typescript-demo
   namespace: digital-dashboard  
 spec:
   selector:
-    app: api-tyscript-demo
+    app: api-typescript-demo
   ports:
   - protocol: TCP
     port: 80
@@ -59,7 +59,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: api-tyscript-demo
+  name: api-typescript-demo
   namespace: digital-dashboard  
 spec:
   rules:
@@ -67,5 +67,5 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: api-tyscript-demo
+          serviceName: api-typescript-demo
           servicePort: 80
