@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-typescript-demo
+  name: api-typescript-deploy
 spec:
   replicas: 1
   template:
@@ -10,7 +10,7 @@ spec:
       - name: primary
         env:
         - name: env
-          value: dev
+          value: staging
         resources:
           limits:
             memory: 128Mi

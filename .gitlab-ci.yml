@@ -1,5 +1,5 @@
 variables:
-  namespace: "digital-dashboard"
+  namespace: "test-typescript-api"
 
 include:
   - project: 'bismarck-shared/ci-cd/standard-ci'

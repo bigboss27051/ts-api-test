@@ -3,8 +3,8 @@ bases:
 images:
 - name: ${image}
   newTag: ${imageTag}
-nameSuffix: -dev
+nameSuffix: -staging
 commonLabels:
-  app: api-typescript-demo-dev
+  app: api-typescript-staging
 patchesStrategicMerge:
 - patch.yaml

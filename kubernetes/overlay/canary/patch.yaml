@@ -1,16 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-typescript-demo
+  name: api-typescript-deploy
 spec:
   replicas: 1
   template:
+    metadata:
+      labels:
+        app: api-typescript
+        mode: canary
     spec:
       containers:
       - name: primary
         env:
         - name: env
-          value: dev
+          value: prod
+        - name: LOG
+          value: TRACE
         resources:
           limits:
             memory: 128Mi
