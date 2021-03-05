@@ -1,6 +1,7 @@
 FROM node:10-alpine
-WORKDIR /web
+WORKDIR /app
 COPY package.json .
 RUN npm install
-ADD . /web
+COPY . /app
+EXPOSE 3003
 CMD [ "npm", "start"]
