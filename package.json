@@ -7,7 +7,9 @@
     "lint": "./node_modules/.bin/eslint \"**/*.{ts,js}\" --max-warnings=0",
     "build": "tsc",
     "start": "rm -rf lib && npm run build && cross-env NODE_ENV=dev node -r ts-node/register lib/server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-prod": "NODE_ENV=production node ./src/bin/www",
+    "start-dev": "NODE_ENV=development node ./src/bin/www"
   },
   "author": "",
   "license": "ISC",

@@ -24,18 +24,18 @@ spec:
       - name: primary
         image: ${image}
         ports:
-        - containerPort: 80
+        - containerPort: 3300
         resources:
           limits:
             memory: 100Mi
         readinessProbe:
           httpGet:
             path: /
-            port: 80
+            port: 3300
         livenessProbe:
           httpGet:
             path: /
-            port: 80
+            port: 3300
         envFrom:
         - configMapRef:
             name: api-typescript-demo-config
@@ -54,7 +54,7 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 80
+    targetPort: 3300
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
