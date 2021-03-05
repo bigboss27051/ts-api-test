@@ -1,6 +1,6 @@
 FROM node:10-alpine
-WORKDIR /usr/src/app
+WORKDIR /web
 COPY package.json .
 RUN npm install
-ADD . /usr/src/app
+ADD . /web
 CMD [ "npm", "start"]
