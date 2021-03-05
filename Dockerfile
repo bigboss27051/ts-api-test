@@ -1,5 +1,5 @@
 FROM node:10-alpine
-WORKDIR /app
+WORKDIR /web
 COPY . .
 RUN adduser -SD appadm
 USER appadm
