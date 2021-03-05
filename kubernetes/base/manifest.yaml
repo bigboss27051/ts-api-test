@@ -47,7 +47,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: api-tyscript-demo
-  namespace: tyscript-dashboard  
+  namespace: digital-dashboard  
 spec:
   selector:
     app: api-tyscript-demo
@@ -60,10 +60,10 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: api-tyscript-demo
-  namespace: tyscript-dashboard  
+  namespace: digital-dashboard  
 spec:
   rules:
-  - host: $(ING_NAME).tyscript-dashboard.arctic.true.th
+  - host: $(ING_NAME).digital-dashboard.arctic.true.th
     http:
       paths:
       - backend:
