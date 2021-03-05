@@ -1,6 +1,6 @@
 FROM node:10-alpine
-WORKDIR /usr/src/app
-COPY package.json .
+WORKDIR /app
+COPY . .
 RUN adduser -SD appadm
 USER appadm
 RUN npm install
