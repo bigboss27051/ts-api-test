@@ -24,18 +24,18 @@ spec:
       - name: primary
         image: ${image}
         ports:
-        - containerPort: 3000
+        - containerPort: 3004
         resources:
           limits:
             memory: 100Mi
         readinessProbe:
           httpGet:
             path: /
-            port: 3000
+            port: 3004
         livenessProbe:
           httpGet:
             path: /
-            port: 3000
+            port: 3004
         envFrom:
         - configMapRef:
             name: api-tyscript-demo-config
@@ -47,23 +47,23 @@ kind: Service
 apiVersion: v1
 metadata:
   name: api-tyscript-demo
-  namespace: digital-dashboard  
+  namespace: tyscript-dashboard  
 spec:
   selector:
     app: api-tyscript-demo
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 3000
+    targetPort: 3004
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: api-tyscript-demo
-  namespace: digital-dashboard  
+  namespace: tyscript-dashboard  
 spec:
   rules:
-  - host: $(ING_NAME).digital-dashboard.arctic.true.th
+  - host: $(ING_NAME).tyscript-dashboard.arctic.true.th
     http:
       paths:
       - backend:
