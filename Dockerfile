@@ -3,4 +3,4 @@ WORKDIR /app
 COPY . .
 RUN adduser -SD appadm
 USER appadm
-CMD ["npm","run","start-dev"]
+CMD ["npm","start"]
